@@ -1,8 +1,9 @@
 # ATAC-seq
 Workflow  to download, process and analyze TCGA bladder cancer ATAC-seq data on HPC environment
 
-#### Download raw ATAC-seq bam files:
-##### GDC-client installation
+##### Data Download
+
+GDC-client installation:
 ```shell
 # GDC-client installation
 virtualenv gdc_client
@@ -11,7 +12,6 @@ virtualenv gdc_client
  pip install -r gdc-client-1.6.0/requirements.txt
  python gdc-client-1.6.0/setup.py install
  ```
- ##### Download
  Need to have the manifest file and token key from GCD
  ```shell
  # Shell commands were submitted to HPC using sbatch command from Slurm job manager. 
@@ -36,4 +36,12 @@ Points to consider [_Genome Biology volume 21, Article number: 22 (2020)_]:
 sbatch fastqc.sh
 ```
 
+##### Read alignment 
 
+Points to consider [_Genome Biology volume 21, Article number: 22 (2020)_]:
+- A unique mapping rate over 80% is typical for a successful ATAC-seq experiment. 
+- A minimum number of mapped reads of  50 million for open chromatin detection and differential analysis, 
+- A minimum number of mapped reads of 200 million for TF footprinting 
+
+```shell
+```
