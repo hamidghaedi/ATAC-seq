@@ -7,7 +7,7 @@
 #SBATCH --output=bam2fastq.%J.out
 #SBATCH --error=bam2fastq.%J.err
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=qaedi.65@gmail.com
+#SBATCH --mail-user=
 
 
 module load StdEnv/2020  samtools/1.12
