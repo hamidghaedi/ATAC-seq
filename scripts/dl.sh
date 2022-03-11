@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --account=def-gooding-ab
+#SBATCH --account= # account name
 #SBATCH --job-name=atac_DL
 #SBATCH --qos=privileged
 #SBATCH --nodes=1                # number of Nodes
@@ -8,9 +8,8 @@
 #SBATCH --time 12:00:00
 #SBATCH --output=atac_DL.%J.out
 #SBATCH --error=atac_DL.%J.err
-#SBATCH --j
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=qaedi.65@gmail.com
+#SBATCH --mail-user= email address
 #SBATCH --array=1-10
 #
 
