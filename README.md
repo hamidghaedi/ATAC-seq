@@ -24,4 +24,10 @@ virtualenv gdc_client
  # scripts are in the script folder
  sbatch bam2fstq.sh
  ```
+##### Quality check
+
+```shel
+sbatch fastqc.sh
+```
+
 
