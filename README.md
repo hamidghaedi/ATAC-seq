@@ -21,7 +21,6 @@ virtualenv gdc_client
  ##### Convert bam files to fastq 
  
   ```shell
- # Shell commands were submitted to HPC using sbatch command from Slurm job manager. 
  # scripts are in the script folder
  sbatch bam2fstq.sh
  ```
