@@ -36,6 +36,26 @@ Points to consider [_Genome Biology volume 21, Article number: 22 (2020)_]:
 sbatch fastqc.sh
 ```
 
+##### Adaptor removal with NGmerge
+Details on NGmerge can be find at [GitHub](https://github.com/jsh58/NGmerge)
+
+To install the tool:
+
+```shell
+git clone https://github.com/jsh58/NGmerge
+cd NGmerge
+make
+```
+Running NGmerge
+
+```shell
+#The script is in the script folder
+sbatch NGmerge.sh 
+```
+
+
+
+
 ##### Read alignment 
 
 Points to consider [_Genome Biology volume 21, Article number: 22 (2020)_]:
