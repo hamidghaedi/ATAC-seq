@@ -2,7 +2,7 @@
 #SBATCH --job-name=alignmnet
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=32
-#SBATCH --time=5-00:00:00
+#SBATCH --time=5-00:00:00 
 #SBATCH --mem=80gb
 #SBATCH --output=bowtie2.%J.out
 #SBATCH --error=bowtie2.%J.err
