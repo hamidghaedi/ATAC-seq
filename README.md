@@ -69,6 +69,11 @@ For alignment I used bowtie2 coupled with samtools to convert the aligner output
 #The script is in the script folder
 sbatch alignmnet.sh
 ```
+To check the bam files and see if any is truncated
+```shell
+module load samtools
+samtools quickcheck -v *.bam > bad_bams.fofn   && echo 'all ok' || echo 'some files failed check, see bad_bams.fofn'
+```
 ##### Peak calling
 For people working with ChIP-seq and ATAC-seq data, peak calling is a big deal. It is coupled with the post alignment processing and also got its own arguments that need to be adjusted for each purpose. I choose to stick to the Genrich tools and the reason has been stated [elsewhere](https://informatics.fas.harvard.edu/atac-seq-guidelines.html), but briefly:It is capable of removing mitochondrial reads and PCR duplicates at once, handling multi mapping reads effectively, peak-calling on all replicates at once and providing ATAC-seq specific mode for analysis.
 
