@@ -64,4 +64,6 @@ Points to consider [_Genome Biology volume 21, Article number: 22 (2020)_]:
 - A minimum number of mapped reads of 200 million for TF footprinting 
 
 ```shell
+#The script is in the script folder
+sbatch alignmnet.sh
 ```
