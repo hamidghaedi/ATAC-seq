@@ -63,7 +63,26 @@ Points to consider [_Genome Biology volume 21, Article number: 22 (2020)_]:
 - A minimum number of mapped reads of  50 million for open chromatin detection and differential analysis, 
 - A minimum number of mapped reads of 200 million for TF footprinting 
 
+For alignment I used bowtie2 coupled with samtools to convert the aligner output to bam file directly. 
+
 ```shell
 #The script is in the script folder
 sbatch alignmnet.sh
+```
+##### Peak calling
+For people working with ChIP-seq and ATAC-seq data, peak calling is a big deal. It is coupled with the post alignment processing and also got its own arguments that need to be adjusted for each purpose. I choose to stick to the Genrich tools and the reason has been stated [elsewhere](https://informatics.fas.harvard.edu/atac-seq-guidelines.html), but briefly:It is capable of removing mitochondrial reads and PCR duplicates at once, handling multi mapping reads effectively, peak-calling on all replicates at once and providing ATAC-seq specific mode for analysis.
+
+```shell
+# to install Genrich
+git clone https://github.com/jsh58/Genrich
+cd Genrich
+make
+```
+Then running on all bam files at once using the recommended setting:
+
+```shell
+# the script is in the script folder
+sbatch Genrich.sh
+```
+
 ```
