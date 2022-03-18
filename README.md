@@ -87,7 +87,6 @@ Then running on all bam files at once using the recommended setting:
 
 ```shell
 # the script is in the script folder
-sbatch Genrich.sh
+sbatch Genrich_peakCalling.sh
 ```
-
-```
+The final result, here ```blca``` is a narrowpeak file providing data on ATAC peaks
