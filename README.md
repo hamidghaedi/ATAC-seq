@@ -111,4 +111,5 @@ bedtools merge -d 1000 -c 4,5,7,8,10 -o distinct -i blca > blca_merged_peaks.bed
 Merging peaks decreased the number of peaks in the file to 132,027 in `blca_merged_peaks.bed`.
 
 ##### Genomic region overlap analysis
-To see if the TEs with expression level are enriched in or adjacent to ATAC-seq peaks. 
+To see if the expressed TEs are enriched in or adjacent to ATAC-seq peaks. I looked at the TEs considering their loci:
+
