@@ -89,4 +89,26 @@ Then running on all bam files at once using the recommended setting:
 # the script is in the script folder
 sbatch Genrich_peakCalling.sh
 ```
-The final result, here ```blca``` is a narrowpeak file providing data on ATAC peaks
+The final result, here ```blca``` is a narrowpeak file providing data on ATAC peaks. 
+
+##### Peak calls assessment
+The number of peaks in the file:
+```shel 
+wc -l blca
+#201458 blca
+```
+To calculate the average peak length:
+
+```shel
+awk '{peak_length = $3 - $2; sum += peak_length; count++} END {average = sum / count; print "Average Peak Length:", average}' blca
+#Average Peak Length: 1146.42
+```
+The average length of peaks can be used to merge adjacent peaks:
+``` shel
+# -c columns to retain their information in the merged output
+bedtools merge -d 1000 -c 4,5,7,8,10 -o distinct -i blca > blca_merged_peaks.bed
+```
+Merging peaks decreased the number of peaks in the file to 132,027 in `blca_merged_peaks.bed`.
+
+##### Genomic region overlap analysis
+To see if the TEs with expression level are enriched in or adjacent to ATAC-seq peaks. 
